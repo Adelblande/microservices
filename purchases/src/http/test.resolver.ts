@@ -10,6 +10,6 @@ export class TestResolver {
   @Query(() => String)
   @UseGuards(AuthorizationGuard)
   hello() {
-    return this.prisma.customer.findMany();
+    return 'Hello Abestadoo...';
   }
 }

@@ -6,9 +6,11 @@ import path from 'node:path';
 
 import { DatabaseModule } from 'src/database/database.module';
 import { ProductResolver } from './graphql/resolvers/product.resolver';
-import { ProductsService } from 'src/services/products/products.service';
+import { ProductsService } from 'src/services/products.service';
 import { PurchaseResolver } from './graphql/resolvers/purchase.resolver';
-import { PurchasesService } from 'src/services/products/purchases.service';
+import { PurchasesService } from 'src/services/purchases.service';
+import { CustomersService } from 'src/services/customers.service';
+import { CustomerResolver } from './graphql/resolvers/customer.resolver';
 
 @Module({
   imports: [
@@ -20,10 +22,14 @@ import { PurchasesService } from 'src/services/products/purchases.service';
     }),
   ],
   providers: [
+    // resolvers
     ProductResolver,
-    ProductsService,
     PurchaseResolver,
+    CustomerResolver,
+    // services
+    ProductsService,
     PurchasesService,
+    CustomersService,
   ],
 })
 export class HttpModule {}

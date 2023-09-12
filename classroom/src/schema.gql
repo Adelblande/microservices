@@ -28,8 +28,10 @@ scalar DateTime
 
 type Query {
   findAllCourses: [Course!]!
+  course(id: String!): Course!
   findAllEnrollment: [Enrollment!]!
   findAllStudents: [Student!]!
+  me: Student!
 }
 
 type Mutation {

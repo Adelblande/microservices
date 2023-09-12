@@ -20,6 +20,10 @@ export class EnrollmentsService {
     return await this.prisma.enrollment.findMany({
       where: {
         studentId,
+        canceledAt: null,
+      },
+      orderBy: {
+        createdAt: 'desc',
       },
     });
   }

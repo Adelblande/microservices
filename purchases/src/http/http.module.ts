@@ -5,12 +5,12 @@ import { GraphQLModule } from '@nestjs/graphql';
 import path from 'node:path';
 
 import { DatabaseModule } from 'src/database/database.module';
-import { ProductResolver } from './graphql/resolvers/product.resolver';
+import { ProductResolver } from './graphql/resolvers/products.resolver';
 import { ProductsService } from 'src/services/products.service';
-import { PurchaseResolver } from './graphql/resolvers/purchase.resolver';
+import { PurchaseResolver } from './graphql/resolvers/purchases.resolver';
 import { PurchasesService } from 'src/services/purchases.service';
 import { CustomersService } from 'src/services/customers.service';
-import { CustomerResolver } from './graphql/resolvers/customer.resolver';
+import { CustomerResolver } from './graphql/resolvers/customers.resolver';
 
 @Module({
   imports: [

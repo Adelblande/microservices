@@ -4,4 +4,7 @@ import { Field, InputType } from '@nestjs/graphql';
 export class CreateCourseInput {
   @Field()
   title: string;
+
+  @Field()
+  slug?: string;
 }

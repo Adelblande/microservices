@@ -19,12 +19,20 @@ export class CoursesService {
     });
   }
 
-  async create({ title }: CreateCourseInput) {
-    const slug = slugify(title, { lower: true });
+  async getCourseBySlug(slug: string) {
+    return await this.prisma.course.findUnique({
+      where: {
+        slug,
+      },
+    });
+  }
+
+  async create({ title, slug }: CreateCourseInput) {
+    const slugCourse = slug ?? slugify(title, { lower: true });
 
     const courseWithSameSlug = await this.prisma.course.findUnique({
       where: {
-        slug,
+        slug: slugCourse,
       },
     });
 
@@ -35,7 +43,7 @@ export class CoursesService {
     return await this.prisma.course.create({
       data: {
         title,
-        slug,
+        slug: slugCourse,
       },
     });
   }

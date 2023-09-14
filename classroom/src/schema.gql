@@ -40,4 +40,5 @@ type Mutation {
 
 input CreateCourseInput {
   title: String!
+  slug: String!
 }

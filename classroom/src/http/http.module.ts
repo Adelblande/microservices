@@ -11,11 +11,13 @@ import { StudentsResolver } from './graphql/resolvers/students.resolver';
 import { CoursesService } from 'src/services/courses.service';
 import { EnrollmentsService } from 'src/services/enrollments.service';
 import { StudentsService } from 'src/services/students.service';
+import { MessagingModule } from 'src/messaging/messaging.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     DatabaseModule,
+    MessagingModule,
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),

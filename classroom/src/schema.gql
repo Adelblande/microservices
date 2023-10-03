@@ -41,6 +41,7 @@ type Query {
   course(id: String!): Course!
   findAllEnrollment: [Enrollment!]!
   findAllStudents: [User!]!
+  me: User!
 }
 
 type Mutation {
